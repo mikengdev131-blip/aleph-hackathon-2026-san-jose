@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "reason": "Official Aleph/Crecimiento typeface from tokens.css; user asked to match the official site",
+        "createdAt": "2026-08-14T16:35:51.352Z"
+      }
+    ]
+  }
+}
