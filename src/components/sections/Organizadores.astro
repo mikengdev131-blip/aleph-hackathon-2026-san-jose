@@ -19,6 +19,7 @@ import SocialIcons from "../SocialIcons.astro";
         <div class="org-item">
           {org.logo && (
             <img
+              class={org.round ? "org-item__mark is-round" : "org-item__mark"}
               src={org.logo}
               alt=""
               width={org.logoWidth}

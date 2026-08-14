@@ -57,6 +57,7 @@ export type SocialLink = {
  * `logo` es opcional: si subís un logo a /public/logos/, completá también
  * logoWidth/logoHeight con el tamaño real del archivo.
  * `socials` puede quedar vacío; los iconos aparecen solo si hay links.
+ * `round: true` recorta la imagen en círculo (para fotos de personas).
  */
 export const organizers: {
   name: string;
@@ -64,21 +65,33 @@ export const organizers: {
   logo?: string;
   logoWidth?: number;
   logoHeight?: number;
+  round?: boolean;
   socials: SocialLink[];
 }[] = [
   {
     name: "Zeek",
     role: "Co-organización",
+    logo: "/logos/zeek.webp",
+    logoWidth: 150,
+    logoHeight: 150,
     socials: [],
   },
   {
     name: "Sebastián",
     role: "Co-organización",
+    logo: "/logos/sebastian.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
     socials: [],
   },
   {
     name: "Mike.dev",
     role: "Co-organización",
+    logo: "/logos/mike-dev.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
     socials: [],
   },
 ];

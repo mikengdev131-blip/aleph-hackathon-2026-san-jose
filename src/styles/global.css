@@ -609,6 +609,12 @@ a.btn.btn--ghost,
   object-position: center;
 }
 
+.org-item img.is-round {
+  width: 72px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
 .org-item strong {
   display: block;
   font-size: 0.95rem;
