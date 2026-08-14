@@ -1,0 +1,36 @@
+---
+import { links, site } from "../../content/site";
+import Section from "../ui/Section.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section id="inscripcion" title="Cómo inscribirte" kicker={`${site.cupos} cupos IRL`}>
+  <p class="section__lead mb-32">
+    Hay dos pasos para la inscripción. El primero es el formulario oficial de la hackathon y el segundo es para reservar tu lugar en el chapter de Salta.
+  </p>
+  <div class="steps">
+    <article class="step">
+      <p class="step__num">Paso 01</p>
+      <h3>Apply oficial de Aleph</h3>
+      <p>
+        Formulario oficial de Aleph Hackathon. Es el primero que hay que completar.
+      </p>
+      <p class="mt-16 actions">
+        <Button href={links.apply} variant="ghost" external>Apply to hack</Button>
+        <button class="btn btn--ghost" type="button" data-open-dialog="apply-guide">
+          Cómo llenar el form
+        </button>
+      </p>
+    </article>
+    <article class="step">
+      <p class="step__num">Paso 02</p>
+      <h3>Cupo presencial Salta</h3>
+      <p>
+        El Luma es para reservar tu lugar en el chapter. Solo hay {site.cupos} lugares. Si ya tenés un equipo, cada uno se inscribe por separado.
+      </p>
+      <p class="mt-16">
+        <Button href={links.luma} variant="green" external>Anotate en Luma</Button>
+      </p>
+    </article>
+  </div>
+</Section>

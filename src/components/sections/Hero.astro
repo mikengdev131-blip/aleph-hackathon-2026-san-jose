@@ -1,0 +1,33 @@
+---
+import { links, site } from "../../content/site";
+import Button from "../ui/Button.astro";
+import Countdown from "../Countdown.astro";
+---
+
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="hero__title-block">
+      <h1 class="hero__title">ALEPH<br />HACKATHON<br />SALTA</h1>
+      <Countdown />
+    </div>
+    <div>
+      <p class="hero__meta">{site.dates}</p>
+      <p class="hero__place">Sábado IRL · Domingo online · {site.cupos} cupos</p>
+      <p class="hero__desc">
+        Chapter híbrido en Salta. El sábado nos juntamos en las oficinas de Vapadu, armamos los equipos y empezamos a hackear. El domingo se presentan los proyectos.
+      </p>
+      <div class="hero__ctas">
+        <button
+          class="btn btn--green"
+          type="button"
+          data-open-dialog="signup-steps"
+          aria-haspopup="dialog"
+          aria-controls="signup-steps"
+        >
+          Anotate acá
+        </button>
+        <Button href={links.apply} variant="ghost" external>Apply oficial</Button>
+      </div>
+    </div>
+  </div>
+</section>

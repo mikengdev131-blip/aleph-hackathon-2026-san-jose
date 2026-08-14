@@ -1,0 +1,13 @@
+---
+import { links, usefulLinks } from "../../content/site";
+import Section from "../ui/Section.astro";
+import LinkRow from "../ui/LinkRow.astro";
+
+const extra = links.whatsapp
+  ? [{ name: "WhatsApp Salta", href: links.whatsapp, hint: "Grupo del chapter" }]
+  : [];
+---
+
+<Section id="links" title="Links útiles">
+  <LinkRow items={[...extra, ...usefulLinks]} />
+</Section>

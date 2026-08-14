@@ -1,0 +1,88 @@
+---
+import { site } from "../content/site";
+
+const target = new Date(site.startsAt).getTime();
+
+const split = (ms: number) => {
+  const diff = Math.max(0, ms);
+  return {
+    days: Math.floor(diff / 86_400_000),
+    hours: Math.floor((diff % 86_400_000) / 3_600_000),
+    minutes: Math.floor((diff % 3_600_000) / 60_000),
+    seconds: Math.floor((diff % 60_000) / 1_000),
+    done: diff <= 0,
+  };
+};
+
+const pad = (n: number) => String(n).padStart(2, "0");
+const initial = split(target - Date.now());
+---
+
+<div
+  class="countdown"
+  data-countdown={site.startsAt}
+  role="timer"
+  aria-label="Tiempo restante hasta el sábado 22 de agosto, 10:00 hora Argentina"
+>
+  <p class="countdown__live" data-countdown-live hidden={!initial.done}>
+    Ya arrancó. Nos vemos en Vapadu.
+  </p>
+  <p class="countdown__kicker" data-countdown-kicker hidden={initial.done}>
+    Falta para el sábado
+  </p>
+  <div class="countdown__clock" data-countdown-clock hidden={initial.done}>
+    <div class="countdown__unit">
+      <span class="countdown__value" data-unit="days">{pad(initial.days)}</span>
+      <span class="countdown__label">días</span>
+    </div>
+    <span class="countdown__sep" aria-hidden="true">:</span>
+    <div class="countdown__unit">
+      <span class="countdown__value" data-unit="hours">{pad(initial.hours)}</span>
+      <span class="countdown__label">hs</span>
+    </div>
+    <span class="countdown__sep" aria-hidden="true">:</span>
+    <div class="countdown__unit">
+      <span class="countdown__value" data-unit="minutes">{pad(initial.minutes)}</span>
+      <span class="countdown__label">min</span>
+    </div>
+    <span class="countdown__sep" data-seconds aria-hidden="true">:</span>
+    <div class="countdown__unit" data-seconds>
+      <span class="countdown__value" data-unit="seconds">{pad(initial.seconds)}</span>
+      <span class="countdown__label">seg</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector("[data-countdown]");
+  if (root instanceof HTMLElement) {
+    const target = new Date(root.dataset.countdown ?? "").getTime();
+    const clock = root.querySelector("[data-countdown-clock]");
+    const live = root.querySelector("[data-countdown-live]");
+    const kicker = root.querySelector("[data-countdown-kicker]");
+    const days = root.querySelector("[data-unit='days']");
+    const hours = root.querySelector("[data-unit='hours']");
+    const minutes = root.querySelector("[data-unit='minutes']");
+    const seconds = root.querySelector("[data-unit='seconds']");
+    const pad = (n: number) => String(n).padStart(2, "0");
+
+    if (Number.isFinite(target)) {
+      const tick = () => {
+        const diff = Math.max(0, target - Date.now());
+        if (diff <= 0) {
+          clock?.setAttribute("hidden", "");
+          kicker?.setAttribute("hidden", "");
+          live?.removeAttribute("hidden");
+          return;
+        }
+        if (days) days.textContent = pad(Math.floor(diff / 86_400_000));
+        if (hours) hours.textContent = pad(Math.floor((diff % 86_400_000) / 3_600_000));
+        if (minutes) minutes.textContent = pad(Math.floor((diff % 3_600_000) / 60_000));
+        if (seconds) seconds.textContent = pad(Math.floor((diff % 60_000) / 1_000));
+        window.setTimeout(tick, 1000 - (Date.now() % 1000));
+      };
+
+      tick();
+    }
+  }
+</script>

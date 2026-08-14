@@ -1,0 +1,30 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<button class="btn btn--ghost copy-btn" type="button" data-copy={text} aria-live="polite">
+  Copiar dirección
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-copy]").forEach((button) => {
+    const original = button.textContent ?? "Copiar dirección";
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copy;
+      if (!value) return;
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copiado";
+      } catch {
+        button.textContent = "No se pudo copiar";
+      }
+      window.setTimeout(() => {
+        button.textContent = original;
+      }, 1800);
+    });
+  });
+</script>

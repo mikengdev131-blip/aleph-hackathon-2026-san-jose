@@ -1,0 +1,85 @@
+---
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface Item {
+  id: string;
+  label: string;
+  href?: string;
+  hint?: string;
+  links?: readonly Link[];
+  dialog?: string;
+  dialogLabel?: string;
+}
+
+interface Props {
+  items: readonly Item[];
+  storageKey?: string;
+}
+
+const { items, storageKey = "aleph-salta-setup" } = Astro.props;
+---
+
+<ul class="checklist" data-checklist={storageKey}>
+  {
+    items.map((item) => (
+      <li>
+        <label>
+          <input type="checkbox" data-check-id={item.id} />
+          <span>
+            {item.href ? (
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.label}
+              </a>
+            ) : (
+              item.label
+            )}
+            {item.hint && <span class="checklist__hint">{item.hint}</span>}
+            {item.links && (
+              <span class="checklist__links">
+                {item.links.map((link) => (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </span>
+            )}
+          </span>
+        </label>
+        {item.dialog && (
+          <button
+            class="btn btn--ghost checklist__guide"
+            type="button"
+            data-open-dialog={item.dialog}
+          >
+            {item.dialogLabel ?? "Ver guía"}
+          </button>
+        )}
+      </li>
+    ))
+  }
+</ul>
+
+<script>
+  const root = document.querySelector("[data-checklist]");
+  if (root instanceof HTMLElement) {
+    const key = root.dataset.checklist ?? "checklist";
+    let saved: Record<string, boolean> = {};
+    try {
+      saved = JSON.parse(localStorage.getItem(key) ?? "{}") as Record<string, boolean>;
+    } catch {
+      saved = {};
+    }
+    root.querySelectorAll<HTMLInputElement>("input[data-check-id]").forEach((input) => {
+      const id = input.dataset.checkId;
+      if (!id) return;
+      input.checked = Boolean(saved[id]);
+      input.addEventListener("change", () => {
+        saved[id] = input.checked;
+        localStorage.setItem(key, JSON.stringify(saved));
+      });
+    });
+  }
+</script>

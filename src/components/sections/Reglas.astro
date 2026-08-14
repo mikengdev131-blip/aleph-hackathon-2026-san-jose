@@ -1,0 +1,37 @@
+---
+import { codeOfConduct, eventRules, links } from "../../content/site";
+import Section from "../ui/Section.astro";
+---
+
+<Section id="reglas" title="Código de conducta">
+  <div class="prose-block">
+  <ul class="bullet-list section__lead">
+    {
+      codeOfConduct.map((item) => (
+        <li>
+          <strong>{item.title}.</strong> {item.body}
+          {"email" in item && item.email ? (
+            <>
+              {" "}
+              <a href={`mailto:${item.email}`}>{item.email}</a>.
+            </>
+          ) : null}
+        </li>
+      ))
+    }
+  </ul>
+  <h3 class="section__subtitle">Reglas del evento</h3>
+  <ul class="bullet-list section__lead">
+    {
+      eventRules.map((item) => (
+        <li>
+          <strong>{item.title}.</strong> {item.body}
+        </li>
+      ))
+    }
+  </ul>
+  <p class="section__lead mt-20">
+    <a href={links.rules} target="_blank" rel="noopener noreferrer">Reglas completas</a>
+  </p>
+  </div>
+</Section>

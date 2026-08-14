@@ -1,0 +1,37 @@
+---
+import { links, organizers } from "../../content/site";
+import Section from "../ui/Section.astro";
+import SocialIcons from "../SocialIcons.astro";
+---
+
+<Section id="organizadores" title="Co-organizadores">
+  <p class="section__lead mb-24">
+    Co-organizado por SaltaDev, Vapadu, DESAFIA, Sorbo Labs y Bitget Wallet. Vapadu es la sede IRL. Si hay un problema el sábado, acercate a cualquiera de nosotres.
+    {
+      links.whatsapp
+        ? ""
+        : " El grupo de WhatsApp se comparte a quienes queden anotados."
+    }
+  </p>
+  <div class="org-list">
+    {
+      organizers.map((org) => (
+        <div class="org-item">
+          <img
+            src={org.logo}
+            alt=""
+            width={org.logoWidth}
+            height={org.logoHeight}
+            loading="lazy"
+            decoding="async"
+          />
+          <div>
+            <strong>{org.name}</strong>
+            <span>{org.role}</span>
+          </div>
+          <SocialIcons links={org.socials} />
+        </div>
+      ))
+    }
+  </div>
+</Section>

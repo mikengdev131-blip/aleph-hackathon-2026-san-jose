@@ -1,0 +1,33 @@
+---
+import { links } from "../content/site";
+---
+
+<footer class="section">
+  <div class="wrap">
+    <div class="footer__row">
+      <a href="/" class="navbar__logo" aria-label="Inicio">
+        <img src="/logos/sun-white.svg" alt="" width="24" height="24" />
+      </a>
+      <nav class="footer__links" aria-label="Redes">
+        <a href={links.official} target="_blank" rel="noopener noreferrer">Sitio oficial</a>
+        <a href={links.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href={links.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href={links.notion} target="_blank" rel="noopener noreferrer">Notion</a>
+      </nav>
+      <div class="footer__cta">
+        <button
+          class="btn btn--ghost"
+          type="button"
+          data-open-dialog="signup-steps"
+          aria-haspopup="dialog"
+          aria-controls="signup-steps"
+        >
+          Anotate
+        </button>
+      </div>
+    </div>
+    <p class="footer__copy">
+      Aleph Hackathon Salta — chapter local. El evento global lo organiza Crecimiento.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+<div class="cursor-beam" aria-hidden="true" data-cursor-beam></div>
+
+<script>
+  const beam = document.querySelector("[data-cursor-beam]");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (beam instanceof HTMLElement && finePointer.matches && !reduceMotion.matches) {
+    let x = innerWidth / 2;
+    let y = innerHeight / 2;
+    let tx = x;
+    let ty = y;
+    let raf = 0;
+
+    const tick = () => {
+      x += (tx - x) * 0.22;
+      y += (ty - y) * 0.22;
+      beam.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      if (Math.abs(tx - x) > 0.15 || Math.abs(ty - y) > 0.15) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = 0;
+      }
+    };
+
+    const onMove = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse") return;
+      tx = event.clientX;
+      ty = event.clientY;
+      beam.classList.add("is-on");
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+  }
+</script>

@@ -1,0 +1,33 @@
+---
+interface Item {
+  time: string;
+  label: string;
+}
+
+interface Day {
+  title: string;
+  items: readonly Item[];
+}
+
+interface Props {
+  days: readonly Day[];
+}
+
+const { days } = Astro.props;
+---
+
+<div class="timeline">
+  {
+    days.map((day) => (
+      <div class="timeline__day">
+        <h3 class="timeline__heading">{day.title}</h3>
+        {day.items.map((item) => (
+          <div class="timeline__row">
+            <span class="timeline__time">{item.time}</span>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    ))
+  }
+</div>

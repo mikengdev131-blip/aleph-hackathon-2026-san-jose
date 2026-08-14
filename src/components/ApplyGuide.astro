@@ -1,0 +1,51 @@
+---
+import { applyGuideFields, links } from "../content/site";
+import Button from "./ui/Button.astro";
+---
+
+<dialog id="apply-guide" class="modal" aria-labelledby="apply-guide-title">
+  <div class="modal__panel">
+    <header class="modal__header">
+      <h2 id="apply-guide-title" class="modal__title">Cómo llenar el apply de Aleph</h2>
+      <button class="modal__close" type="button" data-close-dialog aria-label="Cerrar">
+        Cerrar
+      </button>
+    </header>
+    <p class="modal__lead">
+      El form oficial es el de <a href={links.apply} target="_blank" rel="noopener noreferrer">Airtable</a>.
+      Esto es un ejemplo de cada campo: qué poner y por qué, para no mandarlo vacío o con el chapter equivocado.
+    </p>
+    <ol class="guide-form">
+      {
+        applyGuideFields.map((field, index) => (
+          <li class="guide-field">
+            <span class="guide-field__num">{index + 1}</span>
+            <div>
+              <span class="guide-field__label">{field.label}</span>
+              <span class="guide-field__value">{field.example}</span>
+              {field.hint && <span class="guide-field__hint">{field.hint}</span>}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="modal__actions">
+      <Button href={links.apply} variant="green" external>Ir al apply oficial</Button>
+    </p>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("apply-guide");
+  if (dialog instanceof HTMLDialogElement) {
+    document.querySelectorAll<HTMLButtonElement>("[data-open-dialog='apply-guide']").forEach((button) => {
+      button.addEventListener("click", () => dialog.showModal());
+    });
+    dialog.querySelectorAll("[data-close-dialog]").forEach((button) => {
+      button.addEventListener("click", () => dialog.close());
+    });
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>

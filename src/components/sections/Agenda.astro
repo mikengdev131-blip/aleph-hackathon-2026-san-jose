@@ -1,0 +1,9 @@
+---
+import { agenda } from "../../content/site";
+import Section from "../ui/Section.astro";
+import Timeline from "../ui/Timeline.astro";
+---
+
+<Section id="agenda" title="Agenda">
+  <Timeline days={agenda} />
+</Section>

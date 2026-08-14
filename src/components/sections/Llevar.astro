@@ -1,0 +1,43 @@
+---
+import { bring } from "../../content/site";
+import Section from "../ui/Section.astro";
+
+const icons = {
+  laptop: ["M5 4h14a2 2 0 0 1 2 2v9H3V6a2 2 0 0 1 2-2Z", "M2 17h20", "M9 17v2h6v-2"],
+  plug: ["M9 2v6", "M15 2v6", "M7 8h10v5a5 5 0 0 1-10 0V8Z", "M12 18v4"],
+  ideas: [
+    "M9 18h6",
+    "M10 21h4",
+    "M8 14c-.3-1-.2-2 .4-3A5 5 0 1 1 16 8c0 1.4-.6 2.5-1.6 3.4-.6.6-.8 1.4-.4 2.6",
+  ],
+  marker: ["M16 3.5 20.5 8 8 20.5H3.5V16Z", "M13.5 6 18 10.5"],
+} as const;
+---
+
+<Section id="llevar" title="Qué llevar">
+  <ul class="icon-list section__lead">
+    {
+      bring.map((item) => (
+        <li>
+          <svg
+            class="icon-list__icon"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            {icons[item.icon].map((d) => (
+              <path d={d} />
+            ))}
+          </svg>
+          <span>{item.text}</span>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

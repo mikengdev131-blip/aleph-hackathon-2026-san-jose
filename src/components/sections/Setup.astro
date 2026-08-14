@@ -1,0 +1,14 @@
+---
+import { checklist } from "../../content/site";
+import Section from "../ui/Section.astro";
+import Checklist from "../Checklist.astro";
+import ApplyGuide from "../ApplyGuide.astro";
+---
+
+<Section id="setup" title="Cuentas y tools antes del sábado">
+  <p class="section__lead mb-24">
+    Seguí estos pasos: creá una cuenta en GitHub y en las redes si no las tenés (X/Twitter, Telegram y LinkedIn); anotate al formulario de Crecimiento; creá una cuenta en DoraHacks; y al final, anotate al Luma del chapter de Salta. El tilde se guarda en este navegador.
+  </p>
+  <Checklist items={checklist} />
+  <ApplyGuide />
+</Section>

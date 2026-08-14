@@ -1,0 +1,14 @@
+---
+interface Props {
+  tone?: "info" | "warn";
+  title?: string;
+}
+
+const { tone = "info", title } = Astro.props;
+const hasBody = Astro.slots.has("default");
+---
+
+<aside class:list={["callout", tone === "warn" && "callout--warn"]} role="note">
+  {title && <p class="callout__title">{title}</p>}
+  {hasBody && <div class="callout__body"><slot /></div>}
+</aside>

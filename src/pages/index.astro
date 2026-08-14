@@ -1,0 +1,40 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/sections/Hero.astro";
+import QueEs from "../components/sections/QueEs.astro";
+import Experiencia from "../components/sections/Experiencia.astro";
+import Inscripcion from "../components/sections/Inscripcion.astro";
+import Lugar from "../components/sections/Lugar.astro";
+import Agenda from "../components/sections/Agenda.astro";
+import Llevar from "../components/sections/Llevar.astro";
+import Setup from "../components/sections/Setup.astro";
+import Entrega from "../components/sections/Entrega.astro";
+import Reglas from "../components/sections/Reglas.astro";
+import Links from "../components/sections/Links.astro";
+import Faq from "../components/sections/Faq.astro";
+import Organizadores from "../components/sections/Organizadores.astro";
+import { site } from "../content/site";
+---
+
+<Base title={site.title} description={site.description}>
+  <a class="skip-link" href="#que-es">Saltar al contenido</a>
+  <Nav />
+  <main>
+    <Hero />
+    <QueEs />
+    <Experiencia />
+    <Inscripcion />
+    <Lugar />
+    <Agenda />
+    <Llevar />
+    <Setup />
+    <Entrega />
+    <Reglas />
+    <Links />
+    <Faq />
+    <Organizadores />
+  </main>
+  <Footer />
+</Base>

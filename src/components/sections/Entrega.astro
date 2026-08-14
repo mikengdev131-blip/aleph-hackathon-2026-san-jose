@@ -1,0 +1,27 @@
+---
+import { links } from "../../content/site";
+import Section from "../ui/Section.astro";
+import Callout from "../ui/Callout.astro";
+import Button from "../ui/Button.astro";
+---
+
+<Section id="entrega" title="Cómo presentar el proyecto el domingo">
+  <ol class="step-list section__lead">
+    <li>
+      <strong>Deadline (entrega de proyectos)</strong>
+      El tiempo máximo para presentar los proyectos es el domingo 23 a las 12:00 (hora Argentina). Después de ese horario no se aceptan más proyectos.
+    </li>
+    <li>
+      <strong>Entrega del proyecto</strong>
+      Revisá que el repositorio esté público, la aplicación deployada y disponible, la demo o pitch en video subida a YouTube o Google Drive, y que hayas elegido el track al que querés aplicar.
+    </li>
+  </ol>
+  <div class="mt-20">
+    <Callout tone="warn" title="DoraHacks">
+      El link para subir los proyectos en DoraHacks va a estar próximamente disponible.
+    </Callout>
+  </div>
+  <p class="actions mt-20">
+    <Button href={links.dorahacks} variant="green" external>DoraHacks</Button>
+  </p>
+</Section>

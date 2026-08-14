@@ -1,0 +1,185 @@
+---
+import { links, nav } from "../content/site";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isHome = path === "/";
+const isCredencial = path === "/credencial";
+const sectionHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
+---
+
+<header class="site-header">
+  <div class="nav-progress" data-nav-progress aria-hidden="true"></div>
+  <nav class="navbar" aria-label="Principal">
+    <a class="navbar__logo" href={isHome ? "#top" : "/"} aria-label="Aleph Hackathon Salta">
+      <img src="/logos/sun-white.svg" alt="" width="24" height="24" />
+    </a>
+    <div class="navbar__links">
+      {
+        nav.map((item) => (
+          <a href={sectionHref(item.href)}>{item.label}</a>
+        ))
+      }
+    </div>
+    <div class="navbar__ctas">
+      <a
+        class="btn btn--ghost navbar__credencial"
+        href="/credencial"
+        aria-current={isCredencial ? "page" : undefined}
+      >
+        Credencial
+      </a>
+      <button
+        class="btn btn--green"
+        type="button"
+        data-open-dialog="signup-steps"
+        aria-haspopup="dialog"
+        aria-controls="signup-steps"
+      >
+        Anotate
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" data-nav-toggle>
+        Menú
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile" hidden>
+    {
+      nav.map((item) => (
+        <a href={sectionHref(item.href)} data-nav-close>
+          {item.label}
+        </a>
+      ))
+    }
+    <div class="nav-mobile__ctas">
+      <a
+        class="btn btn--ghost"
+        href="/credencial"
+        data-nav-close
+        aria-current={isCredencial ? "page" : undefined}
+      >
+        Credencial
+      </a>
+      <button class="btn btn--green" type="button" data-open-dialog="signup-steps" data-nav-close>
+        Anotate
+      </button>
+    </div>
+  </div>
+  <dialog id="signup-steps" class="modal" aria-labelledby="signup-steps-title">
+    <div class="modal__panel">
+      <div class="modal__header">
+        <h2 id="signup-steps-title" class="modal__title">Anotate</h2>
+        <button class="modal__close" type="button" data-close-dialog aria-label="Cerrar">
+          Cerrar
+        </button>
+      </div>
+      <p class="modal__lead">
+        Hay dos pasos. Primero el formulario oficial de Aleph, después el Luma para el cupo de Salta.
+      </p>
+      <div class="signup-steps">
+        <a class="btn btn--green" href={links.apply} target="_blank" rel="noopener noreferrer">
+          Paso 1 · Formulario de Aleph
+        </a>
+        <a class="btn btn--ghost" href={links.luma} target="_blank" rel="noopener noreferrer">
+          Paso 2 · Inscripción en Luma
+        </a>
+      </div>
+    </div>
+  </dialog>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const panel = document.getElementById("nav-mobile");
+  if (toggle instanceof HTMLButtonElement && panel) {
+    const focusables = () =>
+      [...panel.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")];
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    const setOpen = (open: boolean, restore = true) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      panel.hidden = !open;
+      document.body.classList.toggle("nav-is-open", open);
+      if (open) {
+        document.addEventListener("keydown", onKey);
+        focusables()[0]?.focus();
+      } else {
+        document.removeEventListener("keydown", onKey);
+        if (restore) toggle.focus();
+      }
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+    panel.querySelectorAll("[data-nav-close]").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false, false));
+    });
+  }
+
+  const signup = document.getElementById("signup-steps");
+  if (signup instanceof HTMLDialogElement) {
+    document.addEventListener("click", (event) => {
+      const trigger = event.target instanceof Element
+        ? event.target.closest("[data-open-dialog='signup-steps']")
+        : null;
+      if (trigger) signup.showModal();
+    });
+    signup.querySelectorAll("[data-close-dialog]").forEach((button) => {
+      button.addEventListener("click", () => signup.close());
+    });
+    signup.addEventListener("click", (event) => {
+      if (event.target === signup) signup.close();
+    });
+  }
+
+  const progress = document.querySelector("[data-nav-progress]");
+  const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('.navbar__links a[href*="#"], .nav-mobile > a[href*="#"]')];
+  const sectionIds = [...new Set(navLinks.map((link) => link.hash.slice(1)).filter(Boolean))];
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const ratio = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+    if (progress instanceof HTMLElement) {
+      progress.style.transform = `scaleX(${ratio})`;
+    }
+
+    const mark = scrollY + 72;
+    let current = "";
+    for (const id of sectionIds) {
+      const section = document.getElementById(id);
+      if (section && section.offsetTop <= mark) current = id;
+    }
+    navLinks.forEach((link) => {
+      link.classList.toggle("is-active", current !== "" && link.hash === `#${current}`);
+    });
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  update();
+</script>
