@@ -48,7 +48,7 @@ export const FORMAT_LIST = Object.values(FORMATS);
 
 export const SPONSOR_LOGOS = [
   // TODO: agregá acá los logos de los co-organizadores de San José (/public/logos/).
-  { src: "/logos/bitget-wallet.webp", round: true },
+  // Ej: { src: "/logos/mi-logo.webp", round: true }
 ] as const;
 
 export type SponsorMark = {

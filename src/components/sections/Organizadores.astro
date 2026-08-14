@@ -6,7 +6,7 @@ import SocialIcons from "../SocialIcons.astro";
 
 <Section id="organizadores" title="Co-organizadores">
   <p class="section__lead mb-24">
-    Co-organizado por el chapter de San José junto a Bitget Wallet. Si hay un problema el sábado, acercate a cualquiera de nosotres.
+    Co-organizado por Zeek, Sebastián y Mike.dev. Si hay un problema el sábado, acercate a cualquiera de nosotres.
     {
       links.whatsapp
         ? ""
@@ -17,14 +17,16 @@ import SocialIcons from "../SocialIcons.astro";
     {
       organizers.map((org) => (
         <div class="org-item">
-          <img
-            src={org.logo}
-            alt=""
-            width={org.logoWidth}
-            height={org.logoHeight}
-            loading="lazy"
-            decoding="async"
-          />
+          {org.logo && (
+            <img
+              src={org.logo}
+              alt=""
+              width={org.logoWidth}
+              height={org.logoHeight}
+              loading="lazy"
+              decoding="async"
+            />
+          )}
           <div>
             <strong>{org.name}</strong>
             <span>{org.role}</span>

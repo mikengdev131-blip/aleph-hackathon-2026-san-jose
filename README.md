@@ -38,7 +38,7 @@ La web permite consultar:
 - cómo preparar y entregar el proyecto;
 - una credencial para compartir en Instagram o X.
 
-El sábado es presencial en San José, Costa Rica (sede por confirmar). El domingo es online para hacking, submissions, judging y cierre.
+El sábado es presencial en el Hotel Radisson San José, Calle Central y Av. 15, Barrio Tournón, San José. El domingo es online para hacking, submissions, judging y cierre.
 
 ## Aleph y sponsors del chapter
 
@@ -46,13 +46,9 @@ El sábado es presencial en San José, Costa Rica (sede por confirmar). El domin
   <a href="https://alephhackathon.crecimiento.build/">
     <img src="./public/logos/sun-black.svg" alt="Aleph Hackathon" height="64" />
   </a>
-  &nbsp;&nbsp;
-  <a href="https://web3.bitget.com/">
-    <img src="./public/logos/bitget-wallet.webp" alt="Bitget Wallet" height="48" />
-  </a>
 </p>
 
-El chapter de San José está co-organizado junto a [Bitget Wallet](https://web3.bitget.com/). Los co-organizadores locales se agregan en `src/content/site.ts` y sus logos en `public/logos/`.
+El chapter de San José está co-organizado por Zeek, Sebastián y Mike.dev. Los co-organizadores se editan en `src/content/site.ts` y sus logos van en `public/logos/`.
 
 ## Tecnologías
 
@@ -133,6 +129,6 @@ Para cambiar textos o links del evento, editá [`src/content/site.ts`](src/conte
 - [Instagram](https://www.instagram.com/crecimientoar/)
 - [LinkedIn](https://www.linkedin.com/company/crecimientobuild)
 
-### Sponsors
+### Chapter San José
 
-- [Bitget Wallet](https://web3.bitget.com/) · [Instagram](https://www.instagram.com/bitgetwallet.esp/) · [X](https://x.com/BitgetWalletES)
+- Zeek · Sebastián · Mike.dev

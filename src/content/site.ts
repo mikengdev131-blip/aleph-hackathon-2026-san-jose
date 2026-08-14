@@ -14,8 +14,7 @@ export const links = {
   official: "https://alephhackathon.crecimiento.build/",
   apply:
     "https://airtable.com/appGGpgjSlDjntK7k/pagBL5Rcb1yhryRQl/form",
-  /** TODO: pegá el link del Luma del chapter de San José. Si queda vacío, el CTA se oculta. */
-  luma: "" as string,
+  luma: "https://luma.com/76w11xtx" as string,
   notion: "https://alephhackathon.notion.site",
   rules: "https://alephhackathon.notion.site/rules",
   dorahacks: "https://dorahacks.io/org/alephhackathon",
@@ -25,18 +24,16 @@ export const links = {
   telegramSignup: "https://telegram.org/apps",
   xSignup: "https://x.com/i/flow/signup",
   linkedinSignup: "https://www.linkedin.com/signup",
-  /** TODO: reemplazá por la dirección exacta de la sede cuando esté confirmada. */
-  maps: "https://www.google.com/maps/search/?api=1&query=San+Jos%C3%A9%2C+Costa+Rica",
+  maps: "https://www.google.com/maps/search/?api=1&query=Radisson+San+Jose+Costa+Rica%2C+Barrio+Tourn%C3%B3n%2C+San+Jos%C3%A9",
   /** Pegá el link del grupo cuando exista. Si queda vacío, no se muestra el CTA. */
   whatsapp: "" as string,
 } as const;
 
-/** TODO: completar con la sede real del chapter de San José. */
 export const venue = {
-  name: "Sede por confirmar",
-  line1: "Dirección por confirmar",
+  name: "Hotel Radisson San José",
+  line1: "Calle Central y Av. 15, Barrio Tournón",
   city: "San José, Costa Rica",
-  copyText: "San José, Costa Rica",
+  copyText: "Hotel Radisson, Calle Central y Av. 15, Barrio Tournón, San José, Costa Rica",
 } as const;
 
 export type SocialKind =
@@ -56,28 +53,33 @@ export type SocialLink = {
 };
 
 /**
- * TODO: agregá los co-organizadores del chapter de San José.
- * Subí cada logo a /public/logos/ y completá logoWidth/logoHeight con el tamaño real.
+ * Co-organizadores del chapter de San José.
+ * `logo` es opcional: si subís un logo a /public/logos/, completá también
+ * logoWidth/logoHeight con el tamaño real del archivo.
+ * `socials` puede quedar vacío; los iconos aparecen solo si hay links.
  */
 export const organizers: {
   name: string;
   role: string;
-  logo: string;
-  logoWidth: number;
-  logoHeight: number;
+  logo?: string;
+  logoWidth?: number;
+  logoHeight?: number;
   socials: SocialLink[];
 }[] = [
   {
-    name: "Bitget Wallet",
+    name: "Zeek",
     role: "Co-organización",
-    logo: "/logos/bitget-wallet.webp",
-    logoWidth: 381,
-    logoHeight: 60,
-    socials: [
-      { kind: "web", href: "https://web3.bitget.com/", label: "Web" },
-      { kind: "instagram", href: "https://www.instagram.com/bitgetwallet.esp/", label: "Instagram" },
-      { kind: "x", href: "https://x.com/BitgetWalletES", label: "X" },
-    ],
+    socials: [],
+  },
+  {
+    name: "Sebastián",
+    role: "Co-organización",
+    socials: [],
+  },
+  {
+    name: "Mike.dev",
+    role: "Co-organización",
+    socials: [],
   },
 ];
 
