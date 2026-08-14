@@ -7,7 +7,7 @@ export const site = {
   cupos: 25,
   timezone: "America/Costa_Rica",
   /** Check-in sábado. Offset -06:00 (Costa Rica, sin DST). */
-  startsAt: "2026-08-22T10:00:00-06:00",
+  startsAt: "2026-08-22T09:00:00-06:00",
 } as const;
 
 export const links = {
@@ -98,11 +98,12 @@ export const agenda = [
     id: "sabado",
     title: "Sábado 22 · Opening & Hacking Day · IRL San José",
     items: [
-      { time: "10:00 – 10:30", label: "Registro y check-in" },
-      { time: "10:30 – 11:30", label: "Desayuno & setup" },
-      { time: "11:30 – 12:00", label: "Ceremonia de apertura" },
-      { time: "Durante el día", label: "Hacking + snacks" },
-      { time: "Almuerzo", label: "Por cuenta de cada participante" },
+      { time: "09:00 – 09:30", label: "Registro y check-in" },
+      { time: "09:30 – 10:30", label: "Desayuno & setup" },
+      { time: "10:30 – 11:00", label: "Ceremonia de apertura" },
+      { time: "11:00 – 12:30", label: "Hacking" },
+      { time: "12:30 – 13:30", label: "Almuerzo" },
+      { time: "15:30", label: "Coffee break" },
       { time: "21:30", label: "Cierre de la jornada presencial" },
     ],
   },
@@ -290,7 +291,7 @@ export const faqs = [
   },
   {
     q: "¿Hay almuerzo el sábado?",
-    a: "No está incluido. Hay desayuno y snacks. El almuerzo lo resuelve cada uno: delivery o algo cerca.",
+    a: "Sí, está incluido. La organización pone desayuno a las 9:30, almuerzo a las 12:30 y coffee break a las 15:30.",
   },
   {
     q: "¿El domingo hay que ir a la sede?",
