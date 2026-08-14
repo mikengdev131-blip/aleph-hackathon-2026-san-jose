@@ -77,7 +77,7 @@ export const organizers: {
     socials: [],
   },
   {
-    name: "Sebastián",
+    name: "Sebastián Ceciliano",
     role: "Co-organización",
     logo: "/logos/sebastian.webp",
     logoWidth: 300,
@@ -86,7 +86,7 @@ export const organizers: {
     socials: [],
   },
   {
-    name: "Mike.dev",
+    name: "Michael Sibaja",
     role: "Co-organización",
     logo: "/logos/mike-dev.webp",
     logoWidth: 300,
