@@ -72,8 +72,8 @@ export const organizers: {
     name: "Zeek",
     role: "Co-organización",
     logo: "/logos/zeek.webp",
-    logoWidth: 150,
-    logoHeight: 150,
+    logoWidth: 300,
+    logoHeight: 300,
     socials: [],
   },
   {
