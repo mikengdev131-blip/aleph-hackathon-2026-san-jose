@@ -117,7 +117,7 @@ export const agenda = [
       { time: "11:00 – 12:30", label: "Hacking" },
       { time: "12:30 – 13:30", label: "Almuerzo" },
       { time: "15:30", label: "Coffee break" },
-      { time: "21:30", label: "Cierre de la jornada presencial" },
+      { time: "18:00", label: "Cierre de la jornada presencial" },
     ],
   },
   {
