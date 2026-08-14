@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import CredentialMaker from "../components/CredentialMaker.astro";
+---
+
+<Base
+  title="Credencial · Aleph Hackathon Salta"
+  description="Armá tu credencial del Aleph Hackathon Salta y descargala para Instagram o X."
+>
+  <a class="skip-link" href="#credencial">Saltar al contenido</a>
+  <Nav />
+  <main id="credencial" class="cred-page">
+    <div class="wrap cred-page__inner">
+      <CredentialMaker />
+    </div>
+  </main>
+  <Footer />
+</Base>
