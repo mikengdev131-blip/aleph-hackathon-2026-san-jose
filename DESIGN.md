@@ -1,4 +1,4 @@
-# Design System: Aleph Hackathon Salta
+# Design System: Aleph Hackathon San José
 
 Tokens extraídos de [alephhackathon.crecimiento.build](https://alephhackathon.crecimiento.build/) (`tokens.css` + `style.css`, Crecimiento & Aleph by 22 Studio). Esta web es una guía de chapter, no un clone de la landing de sponsors.
 
@@ -6,7 +6,7 @@ Tokens extraídos de [alephhackathon.crecimiento.build](https://alephhackathon.c
 
 Navy drench (`#2E3852`) with acid green (`#56F163`) and near-white ink (`#fafafa`). Hairline borders, almost-square corners (2px), massive Geist display. Utility page: less photography, more scan-able structure. Same buttons and type as the official site.
 
-Physical scene: Saturday morning at Vapadu HQ, people on phones, window glare, looking up agenda and links.
+Physical scene: Saturday morning at the venue, people on phones, window glare, looking up agenda and links.
 
 ## 2. Color Palette & Roles
 

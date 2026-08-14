@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Aleph Hackathon Salta 2026</h1>
+<h1 align="center">Aleph Hackathon San José 2026</h1>
 
 <p align="center">
   Guía del chapter local para anotarse, llegar preparado y entregar el proyecto.
@@ -27,18 +27,18 @@
 
 ## Qué es esta web
 
-Este sitio reúne la información práctica del chapter de Salta de la [Aleph Hackathon](https://alephhackathon.crecimiento.build/), que se realiza el 22 y 23 de agosto de 2026.
+Este sitio reúne la información práctica del chapter de San José, Costa Rica, de la [Aleph Hackathon](https://alephhackathon.crecimiento.build/), que se realiza el 22 y 23 de agosto de 2026.
 
 La web permite consultar:
 
 - cómo completar el apply oficial y reservar el cupo presencial;
-- agenda, sede y cómo llegar a Vapadu HQ;
+- agenda, sede y cómo llegar;
 - setup, cuentas y herramientas necesarias;
 - reglas del evento y preguntas frecuentes;
 - cómo preparar y entregar el proyecto;
 - una credencial para compartir en Instagram o X.
 
-El sábado es presencial en Vapadu HQ, Deán Funes 462, Piso 5, Oficina 17, Salta. El domingo es online para hacking, submissions, judging y cierre.
+El sábado es presencial en San José, Costa Rica (sede por confirmar). El domingo es online para hacking, submissions, judging y cierre.
 
 ## Aleph y sponsors del chapter
 
@@ -47,28 +47,12 @@ El sábado es presencial en Vapadu HQ, Deán Funes 462, Piso 5, Oficina 17, Salt
     <img src="./public/logos/sun-black.svg" alt="Aleph Hackathon" height="64" />
   </a>
   &nbsp;&nbsp;
-  <a href="https://salta.dev">
-    <img src="./public/logos/saltadev.webp" alt="SaltaDev" height="64" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://vapadu.ai">
-    <img src="./public/logos/vapadu.webp" alt="Vapadu" height="48" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://desafia.tech/">
-    <img src="./public/logos/desafia.webp" alt="DESAFIA" height="64" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://www.instagram.com/sorbolabs/">
-    <img src="./public/logos/sorbo-labs.webp" alt="Sorbo Labs" height="64" />
-  </a>
-  &nbsp;&nbsp;
   <a href="https://web3.bitget.com/">
     <img src="./public/logos/bitget-wallet.webp" alt="Bitget Wallet" height="48" />
   </a>
 </p>
 
-El chapter está co-organizado por [SaltaDev](https://salta.dev), [Vapadu](https://vapadu.ai), [DESAFIA](https://desafia.tech/), [Sorbo Labs](https://www.instagram.com/sorbolabs/) y [Bitget Wallet](https://web3.bitget.com/). Vapadu también es la sede del encuentro presencial.
+El chapter de San José está co-organizado junto a [Bitget Wallet](https://web3.bitget.com/). Los co-organizadores locales se agregan en `src/content/site.ts` y sus logos en `public/logos/`.
 
 ## Tecnologías
 
@@ -105,7 +89,7 @@ npm run preview
 
 ## Deploy en Vercel
 
-1. Importá el repositorio `facundopadilla/aleph-hackathon-2026-salta`.
+1. Importá este repositorio (fork del chapter de Salta: `facundopadilla/aleph-hackathon-2026-salta`).
 2. Elegí Astro como framework preset.
 3. Usá `npm run build` como build command.
 4. Usá `dist` como output directory.
@@ -151,8 +135,4 @@ Para cambiar textos o links del evento, editá [`src/content/site.ts`](src/conte
 
 ### Sponsors
 
-- [SaltaDev](https://salta.dev) · [Instagram](https://instagram.com/salta.dev) · [LinkedIn](https://salta.dev/linkedin) · [Discord](https://salta.dev/discord/) · [GitHub](https://salta.dev/github/) · [X](https://salta.dev/x/)
-- [Vapadu](https://vapadu.ai) · [Instagram](https://www.instagram.com/vapadu.ia/) · [LinkedIn](https://www.linkedin.com/company/vapad%C3%BA) · [Facebook](https://www.facebook.com/vapadu)
-- [DESAFIA](https://desafia.tech/) · [Instagram](https://www.instagram.com/desafia.tech) · [X](https://x.com/desafiatech)
-- [Sorbo Labs](https://www.instagram.com/sorbolabs/)
 - [Bitget Wallet](https://web3.bitget.com/) · [Instagram](https://www.instagram.com/bitgetwallet.esp/) · [X](https://x.com/BitgetWalletES)

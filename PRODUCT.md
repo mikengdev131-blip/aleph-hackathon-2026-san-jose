@@ -2,15 +2,15 @@
 
 ## Register
 
-Brand (companion landing / utility guide). Design communicates; the job is still to get a hacker from “llegué a Salta” to “estoy anotado y sé qué hacer el sábado”.
+Brand (companion landing / utility guide). Design communicates; the job is still to get a hacker from “llegué a San José” to “estoy anotado y sé qué hacer el sábado”.
 
 ## Users & purpose
 
-Hackers, designers, students, and first-timers going to the Salta chapter (22–23 Aug 2026). They open this on a phone before and during the weekend: where, when, how to apply, what to install, how to submit.
+Hackers, designers, students, and first-timers going to the San José, Costa Rica chapter (22–23 Aug 2026). They open this on a phone before and during the weekend: where, when, how to apply, what to install, how to submit.
 
 ## Personality
 
-Direct, local, on-brand with Aleph. Argentine Spanish. Short answers first.
+Direct, local, on-brand with Aleph. Costa Rican Spanish. Short answers first.
 
 ## Anti-references
 

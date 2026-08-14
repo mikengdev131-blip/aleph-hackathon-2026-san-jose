@@ -1,20 +1,21 @@
 export const site = {
-  name: "Aleph Hackathon Salta",
-  title: "Aleph Hackathon Salta 2026",
+  name: "Aleph Hackathon San José",
+  title: "Aleph Hackathon San José 2026",
   description:
-    "Guía del chapter de Salta: 22 y 23 de agosto de 2026. Inscripción, agenda, lugar, setup y cómo entregar tu proyecto.",
+    "Guía del chapter de San José, Costa Rica: 22 y 23 de agosto de 2026. Inscripción, agenda, lugar, setup y cómo entregar tu proyecto.",
   dates: "22–23 de agosto 2026",
   cupos: 25,
-  timezone: "America/Argentina/Salta",
-  /** Check-in sábado. Offset -03:00 (Argentina, sin DST). */
-  startsAt: "2026-08-22T10:00:00-03:00",
+  timezone: "America/Costa_Rica",
+  /** Check-in sábado. Offset -06:00 (Costa Rica, sin DST). */
+  startsAt: "2026-08-22T10:00:00-06:00",
 } as const;
 
 export const links = {
   official: "https://alephhackathon.crecimiento.build/",
   apply:
     "https://airtable.com/appGGpgjSlDjntK7k/pagBL5Rcb1yhryRQl/form",
-  luma: "https://luma.com/9h9wncuh",
+  /** TODO: pegá el link del Luma del chapter de San José. Si queda vacío, el CTA se oculta. */
+  luma: "" as string,
   notion: "https://alephhackathon.notion.site",
   rules: "https://alephhackathon.notion.site/rules",
   dorahacks: "https://dorahacks.io/org/alephhackathon",
@@ -24,16 +25,18 @@ export const links = {
   telegramSignup: "https://telegram.org/apps",
   xSignup: "https://x.com/i/flow/signup",
   linkedinSignup: "https://www.linkedin.com/signup",
-  maps: "https://www.google.com/maps/search/?api=1&query=De%C3%A1n+Funes+462%2C+Salta%2C+Argentina",
+  /** TODO: reemplazá por la dirección exacta de la sede cuando esté confirmada. */
+  maps: "https://www.google.com/maps/search/?api=1&query=San+Jos%C3%A9%2C+Costa+Rica",
   /** Pegá el link del grupo cuando exista. Si queda vacío, no se muestra el CTA. */
   whatsapp: "" as string,
 } as const;
 
+/** TODO: completar con la sede real del chapter de San José. */
 export const venue = {
-  name: "Vapadu HQ",
-  line1: "Deán Funes 462, Piso 5, Oficina 17",
-  city: "Salta, Argentina",
-  copyText: "Deán Funes 462, Piso 5, Oficina 17, Salta, Argentina",
+  name: "Sede por confirmar",
+  line1: "Dirección por confirmar",
+  city: "San José, Costa Rica",
+  copyText: "San José, Costa Rica",
 } as const;
 
 export type SocialKind =
@@ -52,6 +55,10 @@ export type SocialLink = {
   label: string;
 };
 
+/**
+ * TODO: agregá los co-organizadores del chapter de San José.
+ * Subí cada logo a /public/logos/ y completá logoWidth/logoHeight con el tamaño real.
+ */
 export const organizers: {
   name: string;
   role: string;
@@ -60,57 +67,6 @@ export const organizers: {
   logoHeight: number;
   socials: SocialLink[];
 }[] = [
-  {
-    name: "SaltaDev",
-    role: "Co-organización",
-    logo: "/logos/saltadev.webp",
-    logoWidth: 480,
-    logoHeight: 405,
-    socials: [
-      { kind: "web", href: "https://salta.dev", label: "Web" },
-      { kind: "whatsapp", href: "https://salta.dev/whatsapp", label: "WhatsApp" },
-      { kind: "instagram", href: "https://instagram.com/salta.dev", label: "Instagram" },
-      { kind: "linkedin", href: "https://salta.dev/linkedin", label: "LinkedIn" },
-      { kind: "discord", href: "https://salta.dev/discord/", label: "Discord" },
-      { kind: "github", href: "https://salta.dev/github/", label: "GitHub" },
-      { kind: "x", href: "https://salta.dev/x/", label: "X" },
-    ],
-  },
-  {
-    name: "Vapadu",
-    role: "Co-organización · Sede IRL",
-    logo: "/logos/vapadu.webp",
-    logoWidth: 493,
-    logoHeight: 100,
-    socials: [
-      { kind: "web", href: "https://vapadu.ai", label: "Web" },
-      { kind: "facebook", href: "https://www.facebook.com/vapadu", label: "Facebook" },
-      { kind: "instagram", href: "https://www.instagram.com/vapadu.ia/", label: "Instagram" },
-      { kind: "linkedin", href: "https://www.linkedin.com/company/vapad%C3%BA", label: "LinkedIn" },
-    ],
-  },
-  {
-    name: "DESAFIA",
-    role: "Co-organización",
-    logo: "/logos/desafia.webp",
-    logoWidth: 256,
-    logoHeight: 256,
-    socials: [
-      { kind: "web", href: "https://desafia.tech/", label: "Web" },
-      { kind: "instagram", href: "https://www.instagram.com/desafia.tech", label: "Instagram" },
-      { kind: "x", href: "https://x.com/desafiatech", label: "X" },
-    ],
-  },
-  {
-    name: "Sorbo Labs",
-    role: "Co-organización",
-    logo: "/logos/sorbo-labs.webp",
-    logoWidth: 320,
-    logoHeight: 320,
-    socials: [
-      { kind: "instagram", href: "https://www.instagram.com/sorbolabs/", label: "Instagram" },
-    ],
-  },
   {
     name: "Bitget Wallet",
     role: "Co-organización",
@@ -138,7 +94,7 @@ export const nav = [
 export const agenda = [
   {
     id: "sabado",
-    title: "Sábado 22 · Opening & Hacking Day · IRL Salta",
+    title: "Sábado 22 · Opening & Hacking Day · IRL San José",
     items: [
       { time: "10:00 – 10:30", label: "Registro y check-in" },
       { time: "10:30 – 11:30", label: "Desayuno & setup" },
@@ -193,9 +149,11 @@ export const checklist = [
   },
   {
     id: "luma",
-    label: "Anotate al cupo IRL de Salta (Luma)",
-    href: links.luma,
-    hint: "Solo 25 lugares presenciales el sábado. No reemplaza el apply oficial.",
+    label: "Anotate al cupo IRL de San José (Luma)",
+    href: links.luma || undefined,
+    hint: links.luma
+      ? "Solo 25 lugares presenciales el sábado. No reemplaza el apply oficial."
+      : "El link del Luma se publica pronto. Solo 25 lugares presenciales el sábado. No reemplaza el apply oficial.",
   },
 ] as const;
 
@@ -208,22 +166,22 @@ export const applyGuideFields = [
   {
     label: "Nombre y apellido",
     example: "Ana Pérez",
-    hint: "Como figurás en el DNI o en GitHub. Un apply por persona, aunque ya tengas equipo.",
+    hint: "Como figurás en la cédula o en GitHub. Un apply por persona, aunque ya tengas equipo.",
   },
   {
     label: "País",
-    example: "Argentina",
+    example: "Costa Rica",
     hint: "El país desde el que aplicás.",
   },
   {
     label: "Ciudad",
-    example: "Salta",
-    hint: "La ciudad desde la que participás, no Buenos Aires salvo que vayas al hub de Crecimiento.",
+    example: "San José",
+    hint: "La ciudad desde la que participás.",
   },
   {
     label: "¿Dónde vas a hackear?",
-    example: "IRL · chapter Salta",
-    hint: "Si venís a Vapadu el sábado, elegí presencial / chapter. Online es otra modalidad.",
+    example: "IRL · chapter San José",
+    hint: "Si venís a la sede el sábado, elegí presencial / chapter. Online es otra modalidad.",
   },
   {
     label: "GitHub",
@@ -268,7 +226,7 @@ export const bring = [
   { icon: "ideas", text: "Ideas, o ganas de armar equipo el sábado." },
   {
     icon: "marker",
-    text: "Fibrones para pizarra, al agua y borrables. No lleves indelebles: dañan las pizarras.",
+    text: "Marcadores de pizarra, al agua y borrables. No lleves permanentes: dañan las pizarras.",
   },
 ] as const;
 
@@ -283,7 +241,7 @@ export const codeOfConduct = [
   },
   {
     title: "Si te piden parar, parás",
-    body: "Ante una conducta inapropiada, se espera que pares al toque. Si no, te pueden echar del evento.",
+    body: "Ante una conducta inapropiada, se espera que pares de inmediato. Si no, te pueden echar del evento.",
   },
   {
     title: "Avisá si pasa algo",
@@ -314,7 +272,7 @@ export const eventRules = [
 export const faqs = [
   {
     q: "¿Qué es una hackathon?",
-    a: "Un fin de semana para construir un proyecto de cero — en equipo o solo — y presentarlo ante un jurado. No es una conferencia: se construye un proyecto. El sábado en Salta arrancamos juntos; el domingo se entrega online.",
+    a: "Un fin de semana para construir un proyecto de cero — en equipo o solo — y presentarlo ante un jurado. No es una conferencia: se construye un proyecto. El sábado en San José arrancamos juntos; el domingo se entrega online.",
   },
   {
     q: "¿Necesito experiencia?",
@@ -322,7 +280,7 @@ export const faqs = [
   },
   {
     q: "¿El Luma alcanza para participar?",
-    a: "No. Luma es el cupo presencial de Salta (25 lugares). El apply oficial de Aleph es el que te habilita para DoraHacks, judging y premios. Son dos pasos distintos.",
+    a: "No. Luma es el cupo presencial de San José (25 lugares). El apply oficial de Aleph es el que te habilita para DoraHacks, judging y premios. Son dos pasos distintos.",
   },
   {
     q: "¿Puedo ir solo?",
@@ -333,7 +291,7 @@ export const faqs = [
     a: "No está incluido. Hay desayuno y snacks. El almuerzo lo resuelve cada uno: delivery o algo cerca.",
   },
   {
-    q: "¿El domingo hay que ir a Vapadu?",
+    q: "¿El domingo hay que ir a la sede?",
     a: "No. El domingo es 100% online: hacking, submission y judging desde donde estés.",
   },
   {
@@ -342,7 +300,7 @@ export const faqs = [
   },
   {
     q: "¿Es gratis?",
-    a: "Sí. La participación en Aleph es gratuita. El cupo IRL de Salta es limitado.",
+    a: "Sí. La participación en Aleph es gratuita. El cupo IRL de San José es limitado.",
   },
 ] as const;
 
@@ -353,7 +311,7 @@ export const usefulLinks = [
     hint: "Formulario de Aleph / Crecimiento",
   },
   {
-    name: "Luma Salta",
+    name: "Luma San José",
     href: links.luma,
     hint: "Cupo IRL · 25 lugares",
   },
@@ -385,6 +343,6 @@ export const usefulLinks = [
   {
     name: "Cómo llegar",
     href: links.maps,
-    hint: "Deán Funes 462, Salta",
+    hint: "San José, Costa Rica",
   },
-] as const;
+].filter((item) => Boolean(item.href));

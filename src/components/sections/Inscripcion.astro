@@ -6,7 +6,7 @@ import Button from "../ui/Button.astro";
 
 <Section id="inscripcion" title="Cómo inscribirte" kicker={`${site.cupos} cupos IRL`}>
   <p class="section__lead mb-32">
-    Hay dos pasos para la inscripción. El primero es el formulario oficial de la hackathon y el segundo es para reservar tu lugar en el chapter de Salta.
+    Hay dos pasos para la inscripción. El primero es el formulario oficial de la hackathon y el segundo es para reservar tu lugar en el chapter de San José.
   </p>
   <div class="steps">
     <article class="step">
@@ -24,13 +24,21 @@ import Button from "../ui/Button.astro";
     </article>
     <article class="step">
       <p class="step__num">Paso 02</p>
-      <h3>Cupo presencial Salta</h3>
+      <h3>Cupo presencial San José</h3>
       <p>
         El Luma es para reservar tu lugar en el chapter. Solo hay {site.cupos} lugares. Si ya tenés un equipo, cada uno se inscribe por separado.
       </p>
-      <p class="mt-16">
-        <Button href={links.luma} variant="green" external>Anotate en Luma</Button>
-      </p>
+      {
+        links.luma ? (
+          <p class="mt-16">
+            <Button href={links.luma} variant="green" external>
+              Anotate en Luma
+            </Button>
+          </p>
+        ) : (
+          <p class="mt-16">El link del Luma se publica pronto.</p>
+        )
+      }
     </article>
   </div>
 </Section>

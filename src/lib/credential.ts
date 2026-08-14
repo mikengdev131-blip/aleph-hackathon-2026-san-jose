@@ -6,7 +6,7 @@ export const FORMATS = {
     label: "Historia",
     hint: "Instagram Stories · 9:16",
     pickerHint: "9:16",
-    file: "aleph-salta-historia.png",
+    file: "aleph-san-jose-historia.png",
     ratio: "9 / 16",
   },
   square: {
@@ -16,7 +16,7 @@ export const FORMATS = {
     label: "Cuadrado",
     hint: "Feed de Instagram · 1:1",
     pickerHint: "1:1",
-    file: "aleph-salta-post.png",
+    file: "aleph-san-jose-post.png",
     ratio: "1 / 1",
   },
   portrait: {
@@ -26,7 +26,7 @@ export const FORMATS = {
     label: "Vertical",
     hint: "Feed de Instagram · 4:5",
     pickerHint: "4:5",
-    file: "aleph-salta-post-vertical.png",
+    file: "aleph-san-jose-post-vertical.png",
     ratio: "4 / 5",
   },
   twitter: {
@@ -36,7 +36,7 @@ export const FORMATS = {
     label: "X",
     hint: "X / Twitter · 16:9",
     pickerHint: "16:9",
-    file: "aleph-salta-x.png",
+    file: "aleph-san-jose-x.png",
     ratio: "16 / 9",
   },
 } as const;
@@ -47,10 +47,7 @@ export type Format = (typeof FORMATS)[FormatId];
 export const FORMAT_LIST = Object.values(FORMATS);
 
 export const SPONSOR_LOGOS = [
-  { src: "/logos/saltadev.webp" },
-  { src: "/logos/vapadu.webp" },
-  { src: "/logos/desafia.webp" },
-  { src: "/logos/sorbo-labs.webp" },
+  // TODO: agregá acá los logos de los co-organizadores de San José (/public/logos/).
   { src: "/logos/bitget-wallet.webp", round: true },
 ] as const;
 
@@ -67,7 +64,7 @@ const MUTED = "#E2E3E6";
 
 const DATE = "22–23 AGO 2026";
 const EVENT = "ALEPH HACKATHON";
-const CHAPTER = "SALTA";
+const CHAPTER = "SAN JOSÉ";
 const SITE = "https://alephhackathon.crecimiento.build";
 
 export type CredentialInput = {
@@ -347,8 +344,8 @@ const drawDateAndUrl = (
 
 export const shareCaption = (name: string, role: string) => {
   const who = [name.trim(), role.trim()].filter(Boolean).join(" · ");
-  const line = who || "Aleph Hackathon Salta";
-  return `${line}\nAleph Hackathon Salta · 22–23 de agosto 2026\nhttps://alephhackathon.crecimiento.build/\n#AlephHackathon #Salta`;
+  const line = who || "Aleph Hackathon San José";
+  return `${line}\nAleph Hackathon San José · 22–23 de agosto 2026\nhttps://alephhackathon.crecimiento.build/\n#AlephHackathon #CostaRica`;
 };
 
 export const drawCredential = (
@@ -399,7 +396,7 @@ const drawStory = (ctx: CanvasRenderingContext2D, input: CredentialInput) => {
   setFont(ctx, 600, t(22));
   ctx.fillStyle = GREEN;
   ctx.letterSpacing = "0.12em";
-  ctx.fillText("CHAPTER SALTA", pad, top + sunSize + t(20));
+  ctx.fillText("CHAPTER SAN JOSÉ", pad, top + sunSize + t(20));
   ctx.letterSpacing = "0px";
   wordmark(ctx, pad, top + sunSize + t(52), t(52));
 
@@ -516,7 +513,7 @@ const drawTwitter = (ctx: CanvasRenderingContext2D, input: CredentialInput) => {
   setFont(ctx, 600, t(18));
   ctx.fillStyle = GREEN;
   ctx.letterSpacing = "0.12em";
-  ctx.fillText("CHAPTER SALTA", x, rowY + sunSize + t(18));
+  ctx.fillText("CHAPTER SAN JOSÉ", x, rowY + sunSize + t(18));
   ctx.letterSpacing = "0px";
   wordmark(ctx, x, rowY + sunSize + t(48), t(32));
 
