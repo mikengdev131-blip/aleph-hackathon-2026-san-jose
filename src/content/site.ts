@@ -4,7 +4,7 @@ export const site = {
   description:
     "Guía del chapter de San José, Costa Rica: 22 y 23 de agosto de 2026. Inscripción, agenda, lugar, setup y cómo entregar tu proyecto.",
   dates: "22–23 de agosto 2026",
-  cupos: 25,
+  cupos: 40,
   timezone: "America/Costa_Rica",
   /** Check-in sábado. Offset -06:00 (Costa Rica, sin DST). */
   startsAt: "2026-08-22T09:00:00-06:00",
@@ -168,8 +168,8 @@ export const checklist = [
     label: "Anotate al cupo IRL de San José (Luma)",
     href: links.luma || undefined,
     hint: links.luma
-      ? "Solo 25 lugares presenciales el sábado. No reemplaza el apply oficial."
-      : "El link del Luma se publica pronto. Solo 25 lugares presenciales el sábado. No reemplaza el apply oficial.",
+      ? `Solo ${site.cupos} lugares presenciales el sábado. No reemplaza el apply oficial.`
+      : `El link del Luma se publica pronto. Solo ${site.cupos} lugares presenciales el sábado. No reemplaza el apply oficial.`,
   },
 ] as const;
 
@@ -296,7 +296,7 @@ export const faqs = [
   },
   {
     q: "¿El Luma alcanza para participar?",
-    a: "No. Luma es el cupo presencial de San José (25 lugares). El apply oficial de Aleph es el que te habilita para DoraHacks, judging y premios. Son dos pasos distintos.",
+    a: `No. Luma es el cupo presencial de San José (${site.cupos} lugares). El apply oficial de Aleph es el que te habilita para DoraHacks, judging y premios. Son dos pasos distintos.`,
   },
   {
     q: "¿Puedo ir solo?",
@@ -329,7 +329,7 @@ export const usefulLinks = [
   {
     name: "Luma San José",
     href: links.luma,
-    hint: "Cupo IRL · 25 lugares",
+    hint: `Cupo IRL · ${site.cupos} lugares`,
   },
   {
     name: "Sitio oficial",
