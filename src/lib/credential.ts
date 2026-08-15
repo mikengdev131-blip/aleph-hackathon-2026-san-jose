@@ -52,6 +52,7 @@ export const SPONSOR_LOGOS = [
   { src: "/logos/mike-dev.webp", round: true },
   { src: "/logos/fabian.webp", round: true },
   { src: "/logos/emilio.webp", round: true },
+  { src: "/logos/tamara.webp", round: true },
 ] as const;
 
 export type SponsorMark = {

@@ -112,6 +112,15 @@ export const organizers: {
     round: true,
     socials: [],
   },
+  {
+    name: "Tamara Ortega",
+    role: "Co-organización",
+    logo: "/logos/tamara.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
+    socials: [],
+  },
 ];
 
 export const nav = [
