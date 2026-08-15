@@ -121,6 +121,15 @@ export const organizers: {
     round: true,
     socials: [],
   },
+  {
+    name: "Santiago Villareal",
+    role: "Co-organización",
+    logo: "/logos/santiago.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
+    socials: [],
+  },
 ];
 
 export const nav = [

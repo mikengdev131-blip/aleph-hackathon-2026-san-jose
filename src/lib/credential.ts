@@ -47,12 +47,8 @@ export type Format = (typeof FORMATS)[FormatId];
 export const FORMAT_LIST = Object.values(FORMATS);
 
 export const SPONSOR_LOGOS = [
+  // Solo marcas de organizaciones: las fotos del equipo saturan la fila.
   { src: "/logos/zeek.webp", round: true },
-  { src: "/logos/sebastian.webp", round: true },
-  { src: "/logos/mike-dev.webp", round: true },
-  { src: "/logos/fabian.webp", round: true },
-  { src: "/logos/emilio.webp", round: true },
-  { src: "/logos/tamara.webp", round: true },
 ] as const;
 
 export type SponsorMark = {
