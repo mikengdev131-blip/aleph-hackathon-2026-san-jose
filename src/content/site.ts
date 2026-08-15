@@ -95,10 +95,12 @@ export const organizers: {
     socials: [],
   },
   {
-    // TODO: falta la foto. Subila a /public/logos/fabian.webp y agregá
-    // logo/logoWidth/logoHeight/round como en las entradas de arriba.
-    name: "Fabián",
+    name: "Fabián Sánchez",
     role: "Co-organización",
+    logo: "/logos/fabian.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
     socials: [],
   },
 ];
