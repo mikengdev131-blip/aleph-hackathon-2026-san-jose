@@ -48,7 +48,7 @@ El sábado es presencial en el Hotel Radisson San José, Calle Central y Av. 15,
   </a>
 </p>
 
-El chapter de San José está co-organizado por Zeek, Sebastián Ceciliano y Michael Sibaja. Los co-organizadores se editan en `src/content/site.ts` y sus logos van en `public/logos/`.
+El chapter de San José está co-organizado por Zeek, Sebastián Ceciliano, Michael Sibaja y Fabián. Los co-organizadores se editan en `src/content/site.ts` y sus logos van en `public/logos/`.
 
 ## Tecnologías
 
@@ -131,4 +131,4 @@ Para cambiar textos o links del evento, editá [`src/content/site.ts`](src/conte
 
 ### Chapter San José
 
-- Zeek · Sebastián Ceciliano · Michael Sibaja
+- Zeek · Sebastián Ceciliano · Michael Sibaja · Fabián
