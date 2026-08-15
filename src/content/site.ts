@@ -103,6 +103,15 @@ export const organizers: {
     round: true,
     socials: [],
   },
+  {
+    name: "Emilio Alfaro",
+    role: "Co-organización",
+    logo: "/logos/emilio.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
+    socials: [],
+  },
 ];
 
 export const nav = [
