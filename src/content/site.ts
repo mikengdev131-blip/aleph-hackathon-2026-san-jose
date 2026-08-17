@@ -130,6 +130,15 @@ export const organizers: {
     round: true,
     socials: [],
   },
+  {
+    name: "Matías Mora",
+    role: "Co-organización",
+    logo: "/logos/matias-mora.webp",
+    logoWidth: 300,
+    logoHeight: 300,
+    round: true,
+    socials: [],
+  },
 ];
 
 export const nav = [
